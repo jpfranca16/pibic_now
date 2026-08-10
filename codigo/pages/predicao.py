@@ -31,7 +31,22 @@ os.environ["SHAPE_RESTORE_SHX"] = "YES"
 
 # Inicialização do Earth Engine
 # ee.Authenticate() # Descomente se for a primeira execução nesta máquina
-ee.Initialize(project='infinite-unity-500221-h5')
+# Substitua a linha do ee.Initialize por esta função:
+def inicializar_earth_engine():
+    try:
+        if "gcp_service_account" in st.secrets:
+            key_dict = dict(st.secrets["gcp_service_account"])
+            credentials = ee.ServiceAccountCredentials(
+                key_dict["client_email"], 
+                key_data=key_dict["private_key"]
+            )
+            ee.Initialize(credentials=credentials, project='infinite-unity-500221-h5')
+        else:
+            ee.Initialize(project='infinite-unity-500221-h5')
+    except Exception as e:
+        st.error(f"Erro ao inicializar o Earth Engine: {e}")
+
+inicializar_earth_engine()
 
 # --- 2. LEITURA E FILTRAGEM DO SHAPEFILE ---
 @st.cache_data
