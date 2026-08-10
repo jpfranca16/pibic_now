@@ -18,30 +18,52 @@ from plotly.subplots import make_subplots
 st.markdown(
     """
     <style>
+    /* Papel de parede de fundo */
     .stApp {
         background-image: url("https://images.unsplash.com/photo-1743046813915-94cf6d5e6942?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
         background-attachment: fixed;
         background-size: cover;
     }
+
+    /* Fundo da Sidebar em Vidro Fosco */
+    [data-testid="stSidebar"] {
+        background-color: rgba(255, 255, 255, 0.70) !important;
+        backdrop-filter: blur(12px) !important;
+    }
+
+    /* Aumenta o tamanho e deixa em negrito os nomes das páginas */
+    [data-testid="stSidebarNav"] span {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+    }
+
+    /* Estilo em cartão para cada aba da navegação */
+    [data-testid="stSidebarNav"] a {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 10px !important;
+        margin-bottom: 6px !important;
+        padding: 6px 12px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Cores individuais para cada página na lista */
+    [data-testid="stSidebarNav"] ul li:nth-child(1) span {
+        color: #0284C7 !important; /* Azul para a 1ª página */
+    }
+    [data-testid="stSidebarNav"] ul li:nth-child(2) span {
+        color: #059669 !important; /* Verde para a 2ª página */
+    }
+    [data-testid="stSidebarNav"] ul li:nth-child(3) span {
+        color: #D97706 !important; /* Laranja para a 3ª página */
+    }
+
+    /* Destaque para a página selecionada atualmente */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(255, 255, 255, 0.85) !important;
+        border-left: 5px solid #0284C7 !important;
+    }
     </style>
     """,
-    unsafe_allow_html=True
-)
-
-# --- ELEMENTOS DA SIDEBAR ---
-st.sidebar.markdown("## 🌦️ **DASHBOARD Clima**")
-st.sidebar.caption("Painel de Análise e Predição Climática")
-st.sidebar.markdown("---")
-st.sidebar.subheader("📌 Navegação & Filtros")
-st.sidebar.info("Utilize as páginas acima para alternar entre as séries históricas e o modelo preditivo.")
-st.sidebar.markdown("---")
-st.sidebar.markdown(
-    """
-    <div style="text-align: center; font-size: 0.8em; opacity: 0.8;">
-        Desenvolvido com Python & Earth Engine<br>
-        <b>Paraíba, Brasil</b>
-    </div>
-    """, 
     unsafe_allow_html=True
 )
 
