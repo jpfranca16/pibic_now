@@ -1,0 +1,4 @@
+[theme]
+# Substitua pelo código hexadecimal da cor que você deseja (Ex: Azul)
+primaryColor = "#1C83E1"  
+initialSidebarState = "expanded"
