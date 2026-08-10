@@ -31,12 +31,6 @@ st.markdown(
         backdrop-filter: blur(12px) !important;
     }
 
-    /* Aumenta o tamanho e deixa em negrito os nomes das páginas */
-    [data-testid="stSidebarNav"] span {
-        font-size: 18px !important;
-        font-weight: 700 !important;
-    }
-
     /* Estilo em cartão para cada aba da navegação */
     [data-testid="stSidebarNav"] a {
         background-color: rgba(255, 255, 255, 0.5) !important;
@@ -46,15 +40,34 @@ st.markdown(
         transition: all 0.3s ease !important;
     }
 
-    /* Cores individuais para cada página na lista */
-    [data-testid="stSidebarNav"] ul li:nth-child(1) span {
-        color: #4B5563 !important; /* Azul para a 1ª página */
+    /* 1. OCULTA OS NOMES ORIGINAIS DAS PÁGINAS */
+    [data-testid="stSidebarNav"] ul li span {
+        display: none !important;
     }
-    [data-testid="stSidebarNav"] ul li:nth-child(2) span {
-        color: #4B5563 !important; /* Verde para a 2ª página */
+
+    /* 2. REESCREVE OS NOMES PERSONALIZADOS VIA CSS */
+    /* Página 1 */
+    [data-testid="stSidebarNav"] ul li:nth-child(1) a::after {
+        content: "🏠 Página Inicial" !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #4B5563 !important;
     }
-    [data-testid="stSidebarNav"] ul li:nth-child(3) span {
-        color: #4B5563 !important; /* Laranja para a 3ª página */
+
+    /* Página 2 */
+    [data-testid="stSidebarNav"] ul li:nth-child(2) a::after {
+        content: "📊 Séries Temporais & CSV" !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #4B5563 !important;
+    }
+
+    /* Página 3 */
+    [data-testid="stSidebarNav"] ul li:nth-child(3) a::after {
+        content: "🔮 Predição Climática" !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #4B5563 !important;
     }
 
     /* Destaque para a página selecionada atualmente */
