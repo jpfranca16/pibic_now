@@ -63,11 +63,17 @@ def inicializar_earth_engine():
 inicializar_earth_engine()
 
 # --- 2. LEITURA E FILTRAGEM DO SHAPEFILE ---
+
+PASTA_PAGES = os.path.dirname(__file__)
+PASTA_CODIGO = os.path.dirname(PASTA_PAGES)
+
+# Aponta para a pasta do shapefile que está dentro de 'codigo'
+CAMINHO_SHP = os.path.join(PASTA_CODIGO, "PB_Municipios_2025", "PB_Municipios_2025.shp")
+
+
 @st.cache_data
 def carregar_municipios():
-    municipios_all = gpd.read_file(
-        "C:/Users/joaop/OneDrive/Documentos/GitHub/NOVO_PIBIC/pibic_now/codigo/PB_Municipios_2025/PB_Municipios_2025.shp"
-    )
+    municipios_all = gpd.read_file(CAMINHO_SHP)
 # Filtra apenas os 8 municípios selecionados do PIBIC
     nomes_pibic = ["Patos", "Água Branca", "Imaculada", "Juru", "Manaíra", "Princesa Isabel", "Tavares", "Teixeira"]
     return municipios_all[municipios_all["NM_MUN"].isin(nomes_pibic)].sort_values("NM_MUN")
