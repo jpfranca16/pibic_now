@@ -44,7 +44,7 @@ st.markdown(
     /* 2. REESCREVE OS NOMES PERSONALIZADOS VIA CSS */
     /* Página 1 */
     [data-testid="stSidebarNav"] ul li:nth-child(1) a::after {
-        content: "🏠 Página Inicial" !important;
+        content: "Página Inicial" !important;
         font-size: 18px !important;
         font-weight: 700 !important;
         color: #4B5563 !important;
@@ -52,7 +52,7 @@ st.markdown(
 
     /* Página 2 */
     [data-testid="stSidebarNav"] ul li:nth-child(2) a::after {
-        content: "📊 Séries Temporais & CSV" !important;
+        content: "Séries Temporais & CSV" !important;
         font-size: 18px !important;
         font-weight: 700 !important;
         color: #4B5563 !important;
@@ -60,7 +60,7 @@ st.markdown(
 
     /* Página 3 */
     [data-testid="stSidebarNav"] ul li:nth-child(3) a::after {
-        content: "🔮 Predição Climática" !important;
+        content: "Predição Climática" !important;
         font-size: 18px !important;
         font-weight: 700 !important;
         color: #4B5563 !important;
