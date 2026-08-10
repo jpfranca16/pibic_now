@@ -69,12 +69,16 @@ inicializar_earth_engine()
 #======================================================================================
 
 
+PASTA_ATUAL = os.path.dirname(__file__)
+
+# Aponta dinamicamente para a pasta do arquivo SHP dentro do seu projeto
+CAMINHO_SHP = os.path.join(PASTA_ATUAL, "PB_Municipios_2025", "PB_Municipios_2025.shp")
+
+
 # --- 2. LEITURA E FILTRAGEM DO SHAPEFILE ---
 @st.cache_data
 def carregar_municipios():
-    municipios_all = gpd.read_file(
-        "C:/Users/joaop/OneDrive/Documentos/GitHub/NOVO_PIBIC/pibic_now/codigo/PB_Municipios_2025/PB_Municipios_2025.shp"
-    )
+    municipios_all = gpd.read_file(CAMINHO_SHP)
 # Filtra apenas os 8 municípios selecionados do PIBIC
     nomes_pibic = ["Patos", "Água Branca", "Imaculada", "Juru", "Manaíra", "Princesa Isabel", "Tavares", "Teixeira"]
     return municipios_all[municipios_all["NM_MUN"].isin(nomes_pibic)].sort_values("NM_MUN")
@@ -99,9 +103,7 @@ fig_mapa, ax = plt.subplots(figsize=(12, 6), facecolor='none')
 ax.set_facecolor('none')
 
 # Carrega a Paraíba completa direto da variável original para o fundo neutro
-municipios_all = gpd.read_file(
-    "C:/Users/joaop/OneDrive/Documentos/GitHub/NOVO_PIBIC/pibic_now/codigo/PB_Municipios_2025/PB_Municipios_2025.shp"
-)
+municipios_all = gpd.read_file(CAMINHO_SHP)
 municipios_all.plot(
    ax=ax, 
    color="#AFAFAF", 
