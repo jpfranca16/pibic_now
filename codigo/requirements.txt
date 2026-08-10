@@ -1,0 +1,8 @@
+streamlit
+geopandas
+pandas
+geemap
+earthengine-api
+matplotlib
+plotly
+statsmodels
