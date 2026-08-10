@@ -48,13 +48,13 @@ st.markdown(
 
     /* Cores individuais para cada página na lista */
     [data-testid="stSidebarNav"] ul li:nth-child(1) span {
-        color: #0284C7 !important; /* Azul para a 1ª página */
+        color: #4B5563 !important; /* Azul para a 1ª página */
     }
     [data-testid="stSidebarNav"] ul li:nth-child(2) span {
-        color: #059669 !important; /* Verde para a 2ª página */
+        color: #4B5563 !important; /* Verde para a 2ª página */
     }
     [data-testid="stSidebarNav"] ul li:nth-child(3) span {
-        color: #D97706 !important; /* Laranja para a 3ª página */
+        color: #4B5563 !important; /* Laranja para a 3ª página */
     }
 
     /* Destaque para a página selecionada atualmente */
