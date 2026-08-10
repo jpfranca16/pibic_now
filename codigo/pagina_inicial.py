@@ -29,6 +29,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# --- ELEMENTOS DA SIDEBAR ---
+st.sidebar.markdown("## 🌦️ **DASHBOARD Clima**")
+st.sidebar.caption("Painel de Análise e Predição Climática")
+st.sidebar.markdown("---")
+st.sidebar.subheader("📌 Navegação & Filtros")
+st.sidebar.info("Utilize as páginas acima para alternar entre as séries históricas e o modelo preditivo.")
+st.sidebar.markdown("---")
+st.sidebar.markdown(
+    """
+    <div style="text-align: center; font-size: 0.8em; opacity: 0.8;">
+        Desenvolvido com Python & Earth Engine<br>
+        <b>Paraíba, Brasil</b>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+
 #================================================================
 #================================================================
 
