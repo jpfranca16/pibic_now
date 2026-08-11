@@ -188,10 +188,10 @@ st.pyplot(fig_mapa)
 st.markdown("---")
 
 #botoes:
-if st.button("Séries Temporais & Exportação",type="primary",use_container_width=True):
+if st.button("Séries Temporais & CSV",type="primary",use_container_width=True):
     st.switch_page("pages/baixar_visualizar.py")
 
-if st.button("Predição Climática de Longo Prazo",type="primary",use_container_width=True):
+if st.button("Predição Climática",type="primary",use_container_width=True):
     st.switch_page("pages/predicao.py")    
 
 
