@@ -17,7 +17,14 @@ from plotly.subplots import make_subplots
 # usando css para boniteza:
 st.markdown(
     """
-    
+    <style>
+    /* Papel de parede de fundo */
+    .stApp {
+        background-image: url("");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
     /* Fundo da Sidebar em Vidro Fosco */
     [data-testid="stSidebar"] {
         background-color: rgba(255, 255, 255, 0.70) !important;
