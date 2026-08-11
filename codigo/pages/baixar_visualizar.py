@@ -386,7 +386,7 @@ fig.add_trace(
 
 # 3. Personaliza o layout e títulos
 fig.update_layout(
-    title="Série Histórica da Precipitação",
+    title="Série Histórica da Temperatura",
     xaxis_title="Data",
     yaxis_title="Temperatura",
     hovermode="x unified",  # Destaca os valores exatos ao passar o mouse
