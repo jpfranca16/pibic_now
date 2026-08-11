@@ -138,7 +138,7 @@ def carregar_municipios():
 municipios_filtrados = carregar_municipios()
 
 # --- 3. INTERFACE STREAMLIT ---
-st.title("DESENVOLVIMENTO DE DASHBOARD ATRAVÉS DO PYTHON® PARA VISUALIZAÇÃO DOS DADOS E PREDIÇÃO DA PLUVIOSIDADE UTILIZANDO COLEÇÕES CHIRPS E ERA-5 LAND")
+st.title("DESENVOLVIMENTO E HOSPEDAGEM DE DASHBOARD ATRAVÉS DO PYTHON® PARA VISUALIZAÇÃO DOS DADOS E PREDIÇÃO DA PLUVIOSIDADE UTILIZANDO COLEÇÕES CHIRPS E ERA-5 LAND")
 
 # Seletor interativo que exibe apenas as cidades do projeto
 municipio_selecionado = municipios_filtrados["NM_MUN"]
